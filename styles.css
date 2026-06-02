@@ -1,0 +1,416 @@
+:root {
+  color-scheme: light;
+  --ink: #17201d;
+  --muted: #5f6d67;
+  --paper: #fbfaf6;
+  --surface: #ffffff;
+  --line: #dce4df;
+  --teal: #0f766e;
+  --teal-dark: #0a4f4a;
+  --coral: #d75f43;
+  --sage: #e7eee8;
+  --shadow: 0 18px 40px rgba(23, 32, 29, 0.12);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+.site-header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px clamp(18px, 4vw, 56px);
+  color: #ffffff;
+}
+
+.brand {
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: 0;
+}
+
+.nav {
+  display: flex;
+  gap: clamp(14px, 3vw, 30px);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.nav a {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  padding: 110px clamp(20px, 6vw, 76px) 70px;
+}
+
+.hero-image,
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(7, 22, 20, 0.84) 0%, rgba(7, 22, 20, 0.55) 42%, rgba(7, 22, 20, 0.08) 100%),
+    linear-gradient(0deg, rgba(7, 22, 20, 0.38), rgba(7, 22, 20, 0.08));
+}
+
+.hero-content {
+  position: relative;
+  max-width: 760px;
+  color: #ffffff;
+}
+
+.eyebrow,
+.section-label,
+.card-kicker {
+  margin: 0 0 12px;
+  color: var(--coral);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow {
+  color: #ffb59f;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 720px;
+  margin-bottom: 22px;
+  font-size: clamp(2.35rem, 5.8vw, 5.25rem);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+h2 {
+  margin-bottom: 18px;
+  font-size: clamp(1.7rem, 3vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+h3 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.hero-copy {
+  max-width: 620px;
+  margin-bottom: 32px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+}
+
+.hero-actions,
+.contact-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 18px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-weight: 800;
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.button.primary {
+  background: var(--teal);
+  color: #ffffff;
+}
+
+.button.primary:hover {
+  background: var(--teal-dark);
+}
+
+.button.secondary {
+  border-color: rgba(255, 255, 255, 0.58);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.section,
+.band,
+.contact {
+  padding: clamp(56px, 8vw, 96px) clamp(20px, 5vw, 72px);
+}
+
+.section-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.intro {
+  background: var(--sage);
+}
+
+.intro-grid,
+.about-grid,
+.contact-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+}
+
+.intro-grid p,
+.about-copy p,
+.contact p,
+.card p,
+.facts dd {
+  color: var(--muted);
+}
+
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 28px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card {
+  min-height: 310px;
+  display: flex;
+  flex-direction: column;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.card p:last-of-type {
+  margin-bottom: 24px;
+}
+
+.card a {
+  margin-top: auto;
+  color: var(--teal-dark);
+  font-weight: 800;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.muted {
+  background: #eef3ef;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+}
+
+.facts div {
+  padding: 22px;
+  border-left: 4px solid var(--teal);
+  background: var(--surface);
+}
+
+.facts dt {
+  margin-bottom: 6px;
+  font-weight: 800;
+}
+
+.facts dd {
+  margin: 0;
+}
+
+.facts a {
+  color: var(--teal-dark);
+  font-weight: 800;
+}
+
+.contact {
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.contact .section-label {
+  color: #ffb59f;
+}
+
+.contact p {
+  max-width: 560px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.direct-email a {
+  color: #ffffff;
+  font-weight: 800;
+  text-underline-offset: 4px;
+}
+
+.contact-inner {
+  align-items: center;
+}
+
+.contact-form {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.contact-form label {
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--ink);
+  font: inherit;
+}
+
+.contact-form input {
+  min-height: 44px;
+  padding: 10px 12px;
+}
+
+.contact-form textarea {
+  min-height: 130px;
+  resize: vertical;
+  padding: 12px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 3px solid rgba(255, 181, 159, 0.42);
+  border-color: #ffb59f;
+}
+
+.contact-form .button {
+  width: 100%;
+  margin-top: 6px;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+@media (max-width: 820px) {
+  .site-header {
+    align-items: flex-start;
+    color: #ffffff;
+  }
+
+  .nav {
+    gap: 12px;
+  }
+
+  .hero {
+    min-height: 88vh;
+    padding-top: 96px;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(90deg, rgba(7, 22, 20, 0.88), rgba(7, 22, 20, 0.46));
+  }
+
+  .intro-grid,
+  .about-grid,
+  .contact-inner,
+  .cards,
+  .facts {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-header {
+    position: absolute;
+    padding: 16px 18px;
+  }
+
+  .nav {
+    font-size: 0.84rem;
+  }
+
+  .hero {
+    min-height: 92vh;
+    padding: 92px 18px 44px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+}
